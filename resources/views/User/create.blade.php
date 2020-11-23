@@ -1,18 +1,21 @@
 <!--     protected $fillable = [
   'first_name', 'last_name', 'email', 'phone', 'address', 'zip_code', 'city', 'admin', 'password'
   ]; -->
-  
+@extends('layouts.app')
+@section('title', 'inscription')
+@section('content')
+
   <form action="{{ route ('User.store') }}" method="POST">
     @csrf
     
-    <div class="form-group">    
-      <label for="first_name">Prénom:</label>
-      <input type="text" class="form-control" name="first_name"/>
-    </div>
-    
-    <div class="form-group">
-      <label for="last_name">Nom:</label>
-      <input type="text" class="form-control" name="last_name"/>
+    <div class="row">
+      <div class="col-6">   
+        <label for="first_name">Prénom:</label>
+        <input type="text" class="form-control" name="first_name"/>
+
+        <label for="last_name">Nom:</label>
+        <input type="text" class="form-control" name="last_name"/>
+      </div>
     </div>
     
     <div class="form-group">
@@ -41,5 +44,6 @@
       <input type="password" class="form-control" name="password" required/>
     </div>
                          
-    <button type="submit" class="btn btn-primary-outline">Add contact</button>
+    <button type="submit" class="btn btn-primary-outline">S'inscrire</button>
   </form>
+  @endsection

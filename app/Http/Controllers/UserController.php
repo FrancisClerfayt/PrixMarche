@@ -51,7 +51,7 @@ class UserController extends Controller
             'zip_code' => $request->get('zip_code'),
             'city' => $request->get('city'),
             'admin' => false,
-            'password' => $request->get('password')
+            'password' => bcrypt($request->get('password'))
         ]);
         $user->save();
         return redirect()->route('User.index');
