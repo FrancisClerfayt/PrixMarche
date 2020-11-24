@@ -19,3 +19,4 @@ use Illuminate\Support\Facades\Route;
 Route::resource('User', 'UserController');
 Route::resource('Category', 'CategoryController');
 Route::resource('Product', 'ProductController');
+Route::resource('Cart', 'CartController');

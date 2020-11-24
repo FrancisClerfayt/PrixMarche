@@ -14,7 +14,8 @@ class CartController extends Controller
      */
     public function index()
     {
-        //
+      $cart = Cart::with(['user'])->get();
+      return view('Cart.index', ['carts' => $cart]);
     }
 
     /**
