@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\User;
+use App\CartProduct;
+use App\Category;
 
 class Cart extends Model
 {
@@ -15,4 +17,7 @@ class Cart extends Model
       return $this->belongsTo(User::class);
     }
 
+    public function cart_products(){
+      return $this->hasMany(CartProduct::class, 'cart_id');
+    }
 }

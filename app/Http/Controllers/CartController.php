@@ -42,12 +42,13 @@ class CartController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Cart  $cart
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Cart $cart)
+    public function show($id)
     {
-        //
+      $cart = Cart::with(['user', 'cart_products'])->find($id);
+      return view('Cart.show', ['cart' => $cart]);
     }
 
     /**
