@@ -62,24 +62,28 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Category  $category
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit( $id)
     {
-        //
+        $category = Category::all()->find($id);
+        return view('Category.edit', ['Category'=>$category]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Category  $category
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, $id)
     {
-        //
+        $category = Category::all()->find($id);
+        $category->fill($request->all());
+        $category->save();
+        return redirect()->route('Category.index');
     }
 
     /**
