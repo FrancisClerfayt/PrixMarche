@@ -20,3 +20,4 @@ Route::resource('User', 'UserController');
 Route::resource('Category', 'CategoryController');
 Route::resource('Product', 'ProductController');
 Route::resource('Cart', 'CartController');
+Route::resource('CartProduct', 'CartProductController');

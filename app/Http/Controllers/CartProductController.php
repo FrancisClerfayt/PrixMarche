@@ -75,11 +75,13 @@ class CartProductController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\CartProduct  $cartProduct
+     * @param  int  $product_id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CartProduct $cartProduct)
+    public function destroy($product_id)
     {
-        //
+      $product = CartProduct::all()->find($product_id);
+      $product->delete();
+      return redirect()->route('Cart.index');
     }
 }

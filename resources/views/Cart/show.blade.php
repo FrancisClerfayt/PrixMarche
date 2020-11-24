@@ -5,5 +5,10 @@ Contenu:
   <br>---------<br>
   Produit:{{ $product->product->name }}<br>
   Quantité:{{ $product->quantity }}
+  <form action="{{ route('CartProduct.destroy', ['CartProduct' => $product->id]) }}" method="POST">
+    @csrf
+    @method('DELETE')
+    <button type="submit">Supprimer ce produit</button>
+  </form>
   <br>---------<br>
 @endforeach
