@@ -41,8 +41,18 @@
     </div>
 
     <div class="form-group">
-      <label for="password">Mot de passe*:</label>
-      <input type="password" class="form-control" name="password" required value="{{ $user->password }}"/>
+      <label for="actual_password">Mot de passe actuel*:</label>
+      <input type="password" class="form-control" name="actual_password"/>
+    </div>
+
+    <div class="form-group">
+      <label for="new_password">Nouveau mot de passe*:</label>
+      <input type="password" class="form-control" name="new_password"/>
+    </div>
+
+    <div class="form-group">
+      <label for="confirm_password">Confirmer le mot de passe*:</label>
+      <input type="password" class="form-control" name="confirm_password"/>
     </div>
                          
     <button type="submit" class="btn btn-primary-outline">Modifier mes informations</button>
