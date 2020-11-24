@@ -28,6 +28,7 @@
 							</a>
 							<form action="{{ route('Category.destroy', ['Category' => $category->id]) }}" method="POST" style="display: contents">
 								@csrf
+								@method('DELETE')
 								<button class="btn btn-danger" type="submit">
 									<span class="fa fa-trash"> Supprimer</span>
 								</button>
