@@ -19,3 +19,10 @@
 {{ $user->city }} <br>
 
 <a href="{{ route('User.edit', ['User' => $user->id]) }} ">Modifier mes informations</a>
+<form action="{{ route('User.destroy', ['User' => $user->id]) }}" method="POST">
+  @csrf
+  @method('DELETE')
+  <button type="submit">
+    Supprimer mon compte
+  </button>
+</form>
