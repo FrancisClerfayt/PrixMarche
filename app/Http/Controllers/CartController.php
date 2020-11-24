@@ -77,11 +77,11 @@ class CartController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Cart  $cart
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cart $cart)
+    public function destroy($id)
     {
-        //
+      return redirect()->route('Cart.index');
     }
 }

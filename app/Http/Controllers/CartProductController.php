@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\CartProduct;
+use App\Cart;
 use Illuminate\Http\Request;
 
 class CartProductController extends Controller
@@ -81,7 +82,13 @@ class CartProductController extends Controller
     public function destroy($product_id)
     {
       $product = CartProduct::all()->find($product_id);
+      $cart_id = $product->cart_id;
       $product->delete();
-      return redirect()->route('Cart.index');
+      $cartExists = CartProduct::where('cart_id', $cart_id)->count(); // S'il n'y a plus le cart_id spécifié dans CartProduct
+      if($cartExists == 0) {
+        $cart = Cart::all()->find($cart_id);
+        $cart->delete();  //On supprimer le cart en question de Cart
+      }
+      return redirect()->route('Cart.index'); 
     }
 }
