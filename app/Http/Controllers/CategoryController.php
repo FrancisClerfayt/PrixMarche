@@ -51,12 +51,13 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Category  $category
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show($id)
     {
-        //
+        $category = Category::all()->find($id);
+        return view('Category.show', [ 'category' => $category ] );
     }
 
     /**
