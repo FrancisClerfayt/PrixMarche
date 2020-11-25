@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Category;
 class HomeController extends Controller
 {
     public function index(){
@@ -20,5 +20,10 @@ class HomeController extends Controller
     
     public function delivery(){
         return view('delivery');
+    }
+
+    public function category(){
+        $category = Category::all();
+        return view('category', ['categories' => $category]);
     }
 }
