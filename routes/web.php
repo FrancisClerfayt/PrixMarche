@@ -23,3 +23,4 @@ Route::resource('Cart', 'CartController');
 Route::resource('CartProduct', 'CartProductController');
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('question', 'HomeController@question');
+Route::get('/conditions', 'HomeController@conditions');

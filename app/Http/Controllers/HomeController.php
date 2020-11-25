@@ -13,4 +13,8 @@ class HomeController extends Controller
     public function question(){
         return view('question');
     }
+    
+    public function conditions(){
+        return view('conditions');
+    }
 }
