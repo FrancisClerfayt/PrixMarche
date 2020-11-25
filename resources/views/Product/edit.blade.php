@@ -15,6 +15,8 @@
         <br>
         <input name="picture" value="{{ $product->picture }}" type="text" tabindex="3" required style="display: block;">
         <br>
+        <input name="picture_alt" value="{{ $product->picture_alt }}" type="text" tabindex="3" required style="display: block;">
+        <br>
         <input name="category_id" value="{{ $product->category_id }}" type="number" tabindex="4" required style="display: block;">
         <br>
         <button name="" name="submit" type="submit" id="contact-submit">edit product</button>

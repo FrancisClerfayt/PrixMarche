@@ -15,6 +15,8 @@
         <br>
         <input name="picture" placeholder="product picture" type="text" tabindex="3" required style="display: block;">
         <br>
+        <input name="picture_alt" placeholder="product alt" type="text" tabindex="3" required style="display: block;">
+        <br>
         <input name="category_id" placeholder="category_id" type="number" tabindex="4" required style="display: block;">
         <br>
         <button name="submit" type="submit" id="contact-submit">add product</button>

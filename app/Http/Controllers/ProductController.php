@@ -47,6 +47,7 @@ class ProductController extends Controller
             'name' => $request->get('name'),
             'price' => $request->get('price'),
             'picture' => $request->get('picture'),
+            'picture_alt' => $request->get('picture_alt'),
             'category_id' => $request->get('category_id')
         ]);
         $product->save();

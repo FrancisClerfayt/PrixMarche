@@ -14,7 +14,10 @@
             Price: {{ $product->price }}
         </li>
         <li>
-            index_picture: {{ $product->picture }}
+            Image: {{ $product->picture }}
+        </li>
+        <li>
+            Image alt: {{ $product->picture_alt }}
         </li>
         <li>
             created_at: {{ $product->created_at }}
