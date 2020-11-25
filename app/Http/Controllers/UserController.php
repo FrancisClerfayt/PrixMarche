@@ -99,8 +99,6 @@ class UserController extends Controller
                         $user->fill(['password'=>$request->get('new_password')]);
                     }
                 }
-                // $2y$10$PRpz4nvp18dfC2xgnr5amOFZocV15KG4RCCvoOTT.v.3GnABDRT3e
-                // $2y$10$PRpz4nvp18dfC2xgnr5amOFZocV15KG4RCCvoOTT.v.3GnABDRT3e
                 
             }
             $user->fill([

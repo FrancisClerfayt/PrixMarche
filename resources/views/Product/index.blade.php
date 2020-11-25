@@ -8,7 +8,14 @@
 <body>
     @foreach ($products as $product)
       Produit: <a href="{{ route('Product.show', ['Product' => $product->id]) }}">{{ $product->name}}</a><br>
-      <a href="{{ route('Product.edit', ['Product' => $product->id]) }}">Editer</a><br>
+      <a href="{{ route('Product.edit', ['Product' => $product->id]) }}">Editer</a>
+      <form action="{{ route('CartProduct.store') }}" method="POST">
+          @csrf
+          Quantité: 
+          <input type="number" name="quantity" value="1">
+          <input type="hidden" name="product_id" value="{{ $product->id }}">
+          <button type="submit">Ajouter au panier</button>
+      </form>
       <form action="{{ route('Product.destroy', ['Product' => $product->id]) }}" method="POST">
           @csrf
           @method('DELETE')
