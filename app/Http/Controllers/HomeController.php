@@ -17,4 +17,8 @@ class HomeController extends Controller
     public function conditions(){
         return view('conditions');
     }
+    
+    public function delivery(){
+        return view('delivery');
+    }
 }
