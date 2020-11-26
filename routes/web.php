@@ -25,3 +25,4 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/question', 'HomeController@question');
 Route::get('/conditions', 'HomeController@conditions');
 Route::get('/delivery', 'HomeController@delivery');
+Route::get('/account/{id}', 'HomeController@account')->name('account');
