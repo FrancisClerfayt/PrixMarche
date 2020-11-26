@@ -5,15 +5,20 @@
 @section('content')
 <div class="container">
 	<div class="row">
+		<h2 class="mx-2 ">Toutes les catégories</h2>
+	</div>
+	<div class="row">
+		<div class="col"></div>
 		<div class="col-10">
-			<div class="row">
+			<div class="row my-2 justify-content-around align-items-center">
 				@foreach ($categories as $category)
-						<div class="col-4 category_rectangle">
-							<h2> {{ $category->name }} </h2>
-						</div>
+				<div class="d-flex align-items-center justify-content-center col-3 px-2 m-2 category_rectangle">
+					<p class="m-0 text-center category_name"> {{ $category->name }} </p>
+				</div>
 				@endforeach
 			</div>
 		</div>
+		<div class="col"></div>
 	</div>
 </div>
 @endsection
