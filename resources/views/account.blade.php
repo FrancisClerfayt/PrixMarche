@@ -26,7 +26,7 @@
       </div>
       <div class="row align-items-center justify-content-between">
         <hr class="w-100">
-        <a href="" class="d-flex my-4">Détails du compte</a>
+        <a href="{{ route('account.detail', ['id' => 1]) }}" class="d-flex my-4">Détails du compte</a>
         <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-person" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
         </svg>
@@ -36,7 +36,7 @@
     <div class="col pl-5">
       <p>Bonjour {{ $user->first_name }}</p>
 
-      <p>À partir du tableau de bord de votre compte, vous pouvez visualiser vos <a href="{{ route('orders', ['id' => 1]) }}">commandes récentes</a> ainsi que changer votre <a href="">mot de passe et les détails de votre compte</a>.</p>
+      <p>À partir du tableau de bord de votre compte, vous pouvez visualiser vos <a href="{{ route('orders', ['id' => 1]) }}">commandes récentes</a> ainsi que changer votre <a href="{{ route('account.detail', ['id' => 1]) }}">mot de passe et les détails de votre compte</a>.</p>
     </div>
   </div>
 </div>
