@@ -34,9 +34,8 @@
       </div>
     </div>
     <div class="col pl-5 justify-content-between">
-      <form action="" method="POST">
+      <form action="{{ route('account.update', ['id' => $user->id]) }}" method="POST">
         @csrf
-        @method('PUT')
         
         <div class="row justify-content-between">
           <div class="col-5">   

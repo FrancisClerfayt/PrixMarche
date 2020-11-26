@@ -45,8 +45,8 @@ class HomeController extends Controller
       $user = User::all()->find($id);
       return view('accountdetail', ['user' => $user]);
     }
-    
-    public function update(Request $request, $id)
+
+    public function accountUpdate(Request $request, $id)
     {
       $user = User::find($id);
       $password_old=$user->password;
@@ -70,8 +70,6 @@ class HomeController extends Controller
         ]);
         $user->save();
         
-        return redirect()->route('User.index');
-        
-        
-      }
+        return redirect()->route('account.detail', ['id' => $user->id]);
+    }
 }
