@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Cart;
 use App\Category;
+use App\CartProduct;
 
 class HomeController extends Controller
 {
@@ -86,5 +87,10 @@ class HomeController extends Controller
     
     public function contact(){
         return view('contact');
+    }
+
+    public function pendingCart($id){
+        $pendingcart = Cart::with(['cart_products'])->find($id);
+		return view('pendingcart', ['cart' => $pendingcart]);
     }
 }

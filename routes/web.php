@@ -35,3 +35,4 @@ Route::post('/accountupdate/{id}', 'HomeController@accountUpdate')->name('accoun
 Route::get('/allcategory', 'HomeController@category')->name('category');
 Route::get('/category/{id}', 'HomeController@categoryDetail')->name('category.detail');
 Route::get('/contact', 'HomeController@contact');
+Route::get('/pendingcart/{id}', 'HomeController@pendingCart')->name('pendingcart');
