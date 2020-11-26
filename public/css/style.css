@@ -87,6 +87,16 @@ body, html {
   margin-top: 50px;
 }
 
+.link-category {
+  text-decoration: none;
+  color: white;
+}
+
+.link-category:hover {
+  text-decoration: none;
+  color: white;
+}
+
 @media screen and (min-width: 768px) {
 .title-latest-product {
   margin-bottom: 20px;

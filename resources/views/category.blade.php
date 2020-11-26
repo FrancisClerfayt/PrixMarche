@@ -13,7 +13,7 @@
 			<div class="row my-2 justify-content-around align-items-center">
 				@foreach ($categories as $category)
 				<div class="d-flex align-items-center justify-content-center col-3 px-2 m-2 category_rectangle">
-					<p class="m-0 text-center category_name"> {{ $category->name }} </p>
+					<p class="m-0 text-center category_name"><a href="{{ route('category.detail', ['id' => $category->id]) }}" class="link-category">{{ $category->name }}</a></p>
 				</div>
 				@endforeach
 			</div>

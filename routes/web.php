@@ -33,3 +33,4 @@ Route::get('/ordersdetail/{id}', 'HomeController@ordersDetail')->name('orders.de
 Route::get('/accountdetail/{id}', 'HomeController@accountDetail')->name('account.detail');
 Route::post('/accountupdate/{id}', 'HomeController@accountUpdate')->name('account.update');
 Route::get('/allcategory', 'HomeController@category')->name('category');
+Route::get('/category/{id}', 'HomeController@categoryDetail')->name('category.detail');
