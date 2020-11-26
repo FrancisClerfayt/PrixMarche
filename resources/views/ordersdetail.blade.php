@@ -35,7 +35,7 @@
     </div>
     <div class="col pl-5">
       <div class="row">
-        <p>La commande n°{{ $order->id }} a été passée le {{ $order->created_at }} et est actuellement
+        <p>La commande n°{{ $order->id }} crée le {{ $order->created_at }} et est actuellement
           @if ($order->status == 'pending')
             en cours.
           @elseif ($order->status == 'checked')
@@ -71,7 +71,7 @@
           {{ $order->user->phone }}<br>
           {{ $order->user->email }}<br><br>
         @endif
-        <a href="">Modifier mes informations.</a>
+        <a href="{{ route('account.detail', ['id' => 1]) }}">Modifier mes informations.</a>
       </div>
     </div>
   </div>

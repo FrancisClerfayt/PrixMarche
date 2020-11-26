@@ -49,21 +49,27 @@
         </div>
       </div>
       @foreach ($carts as $cart) 
-        @if ($cart->status != 'pending') <!-- Si la commande n'est pas en attente (le pending est le statut du panier) -->
-          <div class='row'>
-            <div class="col-2">
-              <p class="text-center"><a href="{{ route('orders.detail', ['id' => $cart->id]) }}">N°{{ $cart->id }}</a></p>
-            </div>
-            <div class="col-4">
-              <p class="text-center">{{ $cart->updated_at }}</p>
-            </div>
-            <div class="col-3">
-              <p class="text-center">{{ $cart->status }}</p>
-            </div>
-            <div class="col-3">
-            </div>
+        <div class='row'>
+          <div class="col-2">
+            <p class="text-center"><a href="{{ route('orders.detail', ['id' => $cart->id]) }}">N°{{ $cart->id }}</a></p>
           </div>
-        @endif
+          <div class="col-4">
+            <p class="text-center">{{ $cart->updated_at }}</p>
+          </div>
+          <div class="col-3">
+            <p class="text-center">
+              @if ($cart->status == 'pending')
+                En cours
+              @elseif ($cart->status == 'checked')
+                Validée
+              @else
+                Terminée
+              @endif
+            </p>
+          </div>
+          <div class="col-3">
+          </div>
+        </div>
       @endforeach
     </div>
   </div>
