@@ -93,4 +93,10 @@ class HomeController extends Controller
         $pendingcart = Cart::with(['cart_products'])->find($id);
 		return view('pendingcart', ['cart' => $pendingcart]);
     }
+
+    public function checkout($id){
+        $checkout = Cart::with(['cart_products', 'user'])->find($id);
+		return view('checkout', ['cart' => $checkout]);
+    }
+
 }

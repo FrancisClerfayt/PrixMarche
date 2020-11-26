@@ -24,7 +24,7 @@ Route::resource('CartProduct', 'CartProductController');
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/question', 'HomeController@question');
-Route::get('/conditions', 'HomeController@conditions');
+Route::get('/conditions', 'HomeController@conditions')->name('conditions');
 Route::get('/delivery', 'HomeController@delivery');
 
 Route::get('/account/{id}', 'HomeController@account')->name('account');
@@ -36,3 +36,4 @@ Route::get('/allcategory', 'HomeController@category')->name('category');
 Route::get('/category/{id}', 'HomeController@categoryDetail')->name('category.detail');
 Route::get('/contact', 'HomeController@contact');
 Route::get('/pendingcart/{id}', 'HomeController@pendingCart')->name('pendingcart');
+Route::get('/checkout/{id}', 'HomeController@checkout')->name('checkout');

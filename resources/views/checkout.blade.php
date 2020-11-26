@@ -33,11 +33,26 @@
   </div>
   @endforeach
   <div class="row">
+    <div class="col-6">
+        @if (empty($cart->user->first_name) || empty($cart->user->last_name) || empty($cart->user->email) || empty($cart->user->address) || empty($cart->user->zip_code) || empty($cart->user->city))
+        Votre adresse semble incomplète.
+        <a href="{{ route('account.detail', ['id' => 1]) }}">Modifier mes informations.</a>
+      @else
+        {{ $cart->user->first_name }} {{ $cart->user->last_name }}<br>
+        {{ $cart->user->address }}<br>
+        {{ $cart->user->zip_code }} {{ $cart->user->city }}<br>
+        {{ $cart->user->phone }}<br>
+        {{ $cart->user->email }}<br><br>
+      @endif
+    </div>
+  </div>
+  <div class="row">
+  <p> Vos données personnelles seront utilisées pour le traitement de votre commande, vous accompagner au cours de votre visite du site web, et pour d’autres raisons décrites dans nos <a href="{{ route('conditions') }}">cgu </a></p>
+  </div>
+  <div class="row">
     <div class="col-10"></div>
     <div class="col">
-      <a href="{{ route('checkout', ['id'=>$cart->id]) }}">
-  <button class="btn btn-primary">Continuer</button>
-      </a>
+  <button class="btn btn-primary">Valider la commande</button>
     </div>
   </div>
 </div>
