@@ -82,5 +82,9 @@ class HomeController extends Controller
     $categories = Category::all();
 		$category = Category::with(['products'])->find($id);
 		return view('categoryDetail', ['category' => $category, 'menu' => $categories]);
-	}
+    }
+    
+    public function contact(){
+        return view('contact');
+    }
 }

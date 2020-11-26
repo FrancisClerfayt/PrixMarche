@@ -16,17 +16,17 @@
       <div class="rectangle">
         <img class="picture-product" src="../images/cup-cake.jpg" title="product" alt="img">
         <p class="description-cup"><strong class="bold">Emballage Cup Cake</strong><br>1,00€</p>
-        <button class="btn">Ajouter au panier</button>
+        <button class="btn-cart">Ajouter au panier</button>
       </div>
       <div class="rectangle">
         <img class="picture-product" src="../images/colle-glue.jpg" title="product" alt="img">
         <p class="description-cup"><strong class="bold">Colle glue</strong><br>1,00€</p>
-        <button class="btn">Ajouter au panier</button>
+        <button class="btn-cart">Ajouter au panier</button>
       </div>
       <div class="rectangle">
         <img class="picture-product" src="../images/mask.jpg" title="product" alt="img">
         <p class="description-cup"><strong class="bold">Masque</strong><br>1,00€</p>
-        <button class="btn">Ajouter au panier</button>
+        <button class="btn-cart">Ajouter au panier</button>
       </div>
     </div>
   </section>
