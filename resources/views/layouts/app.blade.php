@@ -28,46 +28,40 @@
       <nav>
           <ul>
               <li>
-                  <a href="">Accueil</a>
+                  <a href=" {{ route('home') }} ">Accueil</a>
               </li>
               <li>
-                  <a href="">Toutes les catégories</a>
+                  <a href=" {{ route('allcategory') }} ">Toutes les catégories</a>
               </li>
               <li>
-                  <a href="">Nouveautés</a>
+                  <a href=" {{ route('delivery') }} ">Livraison et retrait</a>
               </li>
               <li>
-                  <a href="">Livraison et retrait</a>
+                  <a href=" {{ route('contact') }} ">contact</a>
               </li>
               <li>
-                  <a href="">contact</a>
+                  <a href=" {{ route('account') }} ">Mon compte</a>
               </li>
               <li>
-                  <a href="">Mon compte</a>
-              </li>
-              <li>
-                  <a href=""><img src="" alt=""></a>
+                  <a href=" {{ route('pendingcart') }} "><img src="" alt=""></a>
               </li>
           </ul>
 
           <ul class="sub_mobile">
               <li>
-                  <a href="">Accueil</a>
+                  <a href=" {{ route('home') }} ">Accueil</a>
               </li>
               <li>
-                  <a href="">Toutes les catégories</a>
+                  <a href=" {{ route('allcategory') }} ">Toutes les catégories</a>
               </li>
               <li>
-                  <a href="">Nouveautés</a>
+                  <a href=" {{ route('delivery') }} ">Livraison et retrait</a>
               </li>
               <li>
-                  <a href="">Livraison et retrait</a>
+                  <a href=" {{ route('contact') }} ">contact</a>
               </li>
               <li>
-                  <a href="">contact</a>
-              </li>
-              <li>
-                  <a href="">Mon compte</a>
+                  <a href=" {{ route('pendingcart') }} ">Mon compte</a>
               </li>
               <li>
                   <div class="wrap">
@@ -108,9 +102,9 @@
 
             <div class="menu">
               <ul>
-                <li>Livraison et retrait</li>
-                <li>F.A.Q</li>
-                <li>Contact</li>
+                <li><a href="{{ route('delivery') }}">Livraison et retrait</a></li>
+                <li><a href="{{ route('question') }}">F.A.Q</a></li>
+                <li><a href="{{ route('contact') }}">Contact</a></li>
               </ul>
             </div>
           </div>
