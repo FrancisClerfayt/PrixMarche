@@ -10,5 +10,7 @@ class User extends Model
         'first_name', 'last_name', 'email', 'phone', 'address', 'zip_code', 'city', 'admin', 'password'
     ];
 
-
+    public function cart(){
+      return $this->hasMany(Cart::class, 'user_id');
+    }
 }

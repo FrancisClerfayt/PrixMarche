@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Cart;
 
 class HomeController extends Controller
 {
@@ -25,7 +26,13 @@ class HomeController extends Controller
     
     public function account($id){
         $user = User::all()->find($id);
-        //Avec l'auth, verifier si l'id passée est égale a l'id de la session
+        //Avec l'auth, verifier si l'id passée est égale a l'id de la session OU admin
         return view('account', ['user' => $user]);
+    }
+    
+    public function orders($id){
+        $carts = Cart::all()->where('user_id', $id);
+        //Avec l'auth, verifier si l'id passée est égale a l'id de la session OU admin
+        return view('orders', ['carts' => $carts]);
     }
 }
