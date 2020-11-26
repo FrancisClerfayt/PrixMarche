@@ -27,3 +27,4 @@ Route::get('/conditions', 'HomeController@conditions');
 Route::get('/delivery', 'HomeController@delivery');
 Route::get('/account/{id}', 'HomeController@account')->name('account');
 Route::get('/orders/{id}', 'HomeController@orders')->name('orders');
+Route::get('/ordersdetail/{id}', 'HomeController@ordersDetail')->name('orders.detail');

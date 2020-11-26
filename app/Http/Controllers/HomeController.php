@@ -35,4 +35,9 @@ class HomeController extends Controller
         //Avec l'auth, verifier si l'id passée est égale a l'id de la session OU admin
         return view('orders', ['carts' => $carts]);
     }
+    
+    public function ordersDetail($id){
+      $order = Cart::with(['user', 'cart_products'])->find($id);
+      return view('ordersdetail', ['order' => $order]);
+    }
 }

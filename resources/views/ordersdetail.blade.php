@@ -35,36 +35,44 @@
     </div>
     <div class="col pl-5">
       <div class="row">
-        <div class="col-2">
-          <h3 class="text-center">Commande</h3>
-        </div>
-        <div class="col-4">
-          <h3 class="text-center">Date</h3>
-        </div>
-        <div class="col-3">
-          <h3 class="text-center">Etat</h3>
-        </div>
-        <div class="col-3">
-          <h3 class="text-center">Total</h3>
-        </div>
+        <p>La commande n°{{ $order->id }} a été passée le {{ $order->created_at }} et est actuellement
+          @if ($order->status == 'pending')
+            en cours.
+          @elseif ($order->status == 'checked')
+            validée.
+          @else
+            terminée.
+          @endif
+        </p>
       </div>
-      @foreach ($carts as $cart) 
-        @if ($cart->status != 'pending') <!-- Si la commande n'est pas en attente (le pending est le statut du panier) -->
-          <div class='row'>
-            <div class="col-2">
-              <p class="text-center"><a href="{{ route('orders.detail', ['id' => $cart->id]) }}">N°{{ $cart->id }}</a></p>
-            </div>
-            <div class="col-4">
-              <p class="text-center">{{ $cart->updated_at }}</p>
-            </div>
-            <div class="col-3">
-              <p class="text-center">{{ $cart->status }}</p>
-            </div>
-            <div class="col-3">
-            </div>
-          </div>
-        @endif
+      <div class="row pt-4">
+        <h2>Détails de la commande</h2>
+      </div>
+      <div class="row pt-4">
+        <div class="col-6"><h3>Produit</h3></div>
+        <div class="col-6"><h3>Total</h3></div>
+      </div>
+      @foreach ($order->cart_products as $product)
+        <div class="row">
+          <div class="col-6">{{ $product->product->name }} *{{ $product->quantity }}</div>
+          <div class="col-6">{{ $product->product->price * $product->quantity }}€</div>
+        </div>
       @endforeach
+      <div class="row pt-5">
+        <h2 class="text-center">Adresse de facturation</h2>
+      </div>
+      <div class="row pt-3">
+        @if (empty($order->user->first_name) || empty($order->user->last_name) || empty($order->user->email) || empty($order->user->address) || empty($order->user->zip_code) || empty($order->user->city))
+          Votre adresse semble incomplète.
+        @else
+          {{ $order->user->first_name }} {{ $order->user->last_name }}<br>
+          {{ $order->user->address }}<br>
+          {{ $order->user->zip_code }} {{ $order->user->city }}<br>
+          {{ $order->user->phone }}<br>
+          {{ $order->user->email }}<br><br>
+        @endif
+        <a href="">Modifier mes informations.</a>
+      </div>
     </div>
   </div>
 </div>
