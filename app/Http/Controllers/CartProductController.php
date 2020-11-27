@@ -73,7 +73,7 @@ class CartProductController extends Controller
         $cart->save();
       }
 
-      return redirect()->route('pendingcart', ['id' => 1]);
+      return redirect()->back();
     }
 
     /**
