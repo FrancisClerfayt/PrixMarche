@@ -22,7 +22,14 @@
         <div class="col-4 my-2 d-flex flex-column align-items-center">
           <img class="picture-product" src="../../images/adhesif.jpg" alt="{{ $product->picture_alt }}">
           <p class="description-cup"><strong class="bold">{{ $product->name }}</strong><br>{{ $product->price }}€</p>
-          <button class="btn btn-primary">Ajouter au panier</button>
+          
+        <form action="{{ route('CartProduct.store') }}" method="POST">
+          @csrf
+          Quantité: 
+          <input type="number" name="quantity" value="1">
+          <input type="hidden" name="product_id" value="{{ $product->id }}">
+          <button type="submit" CLASS="btn btn-primary">Ajouter au panier</button>
+      </form>
         </div>
       @endforeach
     </div>
