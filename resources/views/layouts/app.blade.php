@@ -9,7 +9,10 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<link rel="stylesheet" href="{{ asset('css/app.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/style.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/layout.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/layout.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/delivery.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/question.css') }}">
+		
 </head>
 <body>
     <header>
@@ -42,10 +45,10 @@
                   <a href=" {{ route('contact') }} ">contact</a>
               </li>
               <li>
-                  <a href=" {{ route('account') }} ">Mon compte</a>
+                  {{-- <a href=" {{ route('account', ['id' => 1]) }} ">Mon compte</a> --}}
               </li>
               <li>
-                  <a href=" {{ route('pendingcart') }} "><img src="" alt=""></a>
+                  {{-- <a href=" {{ route('pendingcart', []) }} "><img src="" alt=""></a> --}}
               </li>
           </ul>
 
@@ -63,7 +66,7 @@
                   <a href=" {{ route('contact') }} ">contact</a>
               </li>
               <li>
-                  <a href=" {{ route('pendingcart') }} ">Mon compte</a>
+                  {{-- <a href=" {{ route('pendingcart') }} ">Mon compte</a> --}}
               </li>
               <li>
                   <div class="wrap">
